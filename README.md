@@ -12,6 +12,7 @@
 - [License](#license)
 - [Contact](#contact)
 
+Devs: dnv7, sn0w
 ## About the Game
 
 This game is a real-time, browser-based strategy game inspired by the classic *Travian*. Players can build their own villages, form alliances, train armies, and wage war for dominance on the world map. Set in an ancient world, you will need to gather resources, expand your empire, and outsmart your rivals through clever tactics and strategic diplomacy.
