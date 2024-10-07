@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://bje713tykkdp"]
+
+[ext_resource type="PackedScene" uid="uid://dmuwlh0oykudq" path="res://elfs/scene/test.tscn" id="1_o4jra"]
+[ext_resource type="Script" path="res://patterns/state-machine/state_machine.gd" id="2_4q1bq"]
+[ext_resource type="Script" path="res://patterns/state-machine/common_features_state.gd" id="3_ti03t"]
+[ext_resource type="Script" path="res://scenes/player_test/states/left.gd" id="4_hiuww"]
+[ext_resource type="PackedScene" uid="uid://bexwhdy8iwbm5" path="res://scenes/player_test/player_test.tscn" id="4_w8vj1"]
+[ext_resource type="Script" path="res://scenes/player_test/player_test.gd" id="5_i25hn"]
+[ext_resource type="Script" path="res://scenes/player_test/states/right.gd" id="7_va4i0"]
+
+[node name="Travianami" type="Node2D"]
+
+[node name="Testy" parent="." instance=ExtResource("1_o4jra")]
+
+[node name="player_test" parent="." instance=ExtResource("4_w8vj1")]
+position = Vector2(143, 109)
+script = ExtResource("5_i25hn")
+
+[node name="StateMachine" type="Node" parent="player_test" node_paths=PackedStringArray("default_state")]
+script = ExtResource("2_4q1bq")
+default_state = NodePath("Left")
+
+[node name="CommonFeaturesState" type="Node" parent="player_test/StateMachine"]
+script = ExtResource("3_ti03t")
+
+[node name="Left" type="Node" parent="player_test/StateMachine"]
+script = ExtResource("4_hiuww")
+
+[node name="Right" type="Node" parent="player_test/StateMachine"]
+script = ExtResource("7_va4i0")
