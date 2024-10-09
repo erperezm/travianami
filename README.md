@@ -83,21 +83,21 @@ We welcome contributions from the community! To contribute:
 1. Fork the repository.
 2. Create a new branch for your feature or bugfix:
 
-    ```bash
-    git checkout -b feature/your-feature-name
-    ```
+	```bash
+	git checkout -b feature/your-feature-name
+	```
 
 3. Make your changes and commit them:
 
-    ```bash
-    git commit -m "Add feature: description"
-    ```
+	```bash
+	git commit -m "Add feature: description"
+	```
 
 4. Push to your branch:
 
-    ```bash
-    git push origin feature/your-feature-name
-    ```
+	```bash
+	git push origin feature/your-feature-name
+	```
 
 5. Open a Pull Request and provide a detailed description of your changes.
 
