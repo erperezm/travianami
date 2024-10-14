@@ -12,6 +12,10 @@
 - [License](#license)
 - [Contact](#contact)
 
+## Devs: 
+[paulperez-dev](https://github.com/paulperez-dev)
+
+[sn0w](https://github.com/erperezm)
 ## About the Game
 
 This game is a real-time, browser-based strategy game inspired by the classic *Travian*. Players can build their own villages, form alliances, train armies, and wage war for dominance on the world map. Set in an ancient world, you will need to gather resources, expand your empire, and outsmart your rivals through clever tactics and strategic diplomacy.
@@ -79,21 +83,21 @@ We welcome contributions from the community! To contribute:
 1. Fork the repository.
 2. Create a new branch for your feature or bugfix:
 
-    ```bash
-    git checkout -b feature/your-feature-name
-    ```
+	```bash
+	git checkout -b feature/your-feature-name
+	```
 
 3. Make your changes and commit them:
 
-    ```bash
-    git commit -m "Add feature: description"
-    ```
+	```bash
+	git commit -m "Add feature: description"
+	```
 
 4. Push to your branch:
 
-    ```bash
-    git push origin feature/your-feature-name
-    ```
+	```bash
+	git push origin feature/your-feature-name
+	```
 
 5. Open a Pull Request and provide a detailed description of your changes.
 
