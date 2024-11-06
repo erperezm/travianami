@@ -14,6 +14,11 @@ var Dic = {}
 		#for y in GridSize:
 			#set_cell(Vector2(x, y), [index-here], Vector2i(0, 0))
 
+func _physics_process(delta: float) -> void:
+	var mouseCoords = local_to_map(get_local_mouse_position())
+	var gridCoords = (mouseCoords * 16) + Vector2i(8,8)
+	mouse_grid_selected.global_position = gridCoords
+
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.pressed:
