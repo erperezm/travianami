@@ -5,7 +5,8 @@ extends TileMapLayer
 
 var GridSize = 4
 var Dic = {}
-
+var VillageLoaded = false
+var Villages = null
 # Called when the node enters the scene tree for the first time. 
 # Part of the code generation investigation - DO NOT DELETE YET
 #func _ready() -> void:
@@ -22,8 +23,27 @@ func _physics_process(delta: float) -> void:
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.pressed:
-			var mouseCoords = local_to_map(get_local_mouse_position())
-			var zIndex = tile_map_world.get_cell_tile_data(mouseCoords).z_index
-			print("MouseCoords: ", mouseCoords)
-			print("Terrain type: ", zIndex)
+			print("MouseCoords: ", get_mouse_coords())
+			print("Terrain type: ", get_z_index())
+			print(get_village_index())
+			if(VillageLoaded):
+				print(Villages[get_village_index()].name)
+				print(Villages[get_village_index()].resourceAmount)
+			else:
+				print("loading villages")
+			
+	
+func get_mouse_coords():
+	return local_to_map(get_local_mouse_position())
+	
+func get_zIndex():
+	return tile_map_world.get_cell_tile_data(get_mouse_coords()).z_index
+	
+func get_village_index():
+	return int(str(get_mouse_coords().x, get_mouse_coords().y))
+
+func _on_http_request_data_loaded(villages: Variant) -> void:
+	VillageLoaded = true
+	Villages=villages
+	
 	
