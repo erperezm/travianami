@@ -3,6 +3,11 @@ extends TileMapLayer
 @onready var tile_map_world: TileMapLayer = $"."
 @onready var mouse_grid_selected: Sprite2D = $"../MouseGridSelected"
 
+@onready var data_wood: Label = $"../Wood/dataWood"
+@onready var data_food: Label = $"../Food/dataFood"
+@onready var data_water: Label = $"../Water/dataWater"
+@onready var data_metal: Label = $"../Metal/dataMetal"
+
 var GridSize = 4
 var Dic = {}
 var VillageLoaded = false
@@ -27,8 +32,10 @@ func _input(event):
 			print("Terrain type: ", get_z_index())
 			print(get_village_index())
 			if(VillageLoaded):
-				print(Villages[get_village_index()].name)
-				print(Villages[get_village_index()].resourceAmount)
+				data_wood.text = str(Villages[get_village_index()].resourceAmount.wood).split(".", true, 0)[0]
+				data_food.text = str(Villages[get_village_index()].resourceAmount.food).split(".", true, 0)[0]
+				data_water.text = str(Villages[get_village_index()].resourceAmount.water).split(".", true, 0)[0]
+				data_metal.text = str(Villages[get_village_index()].resourceAmount.metal).split(".", true, 0)[0]
 			else:
 				print("loading villages")
 			
@@ -40,10 +47,14 @@ func get_zIndex():
 	return tile_map_world.get_cell_tile_data(get_mouse_coords()).z_index
 	
 func get_village_index():
-	return int(str(get_mouse_coords().x, get_mouse_coords().y))
+	#16 is the height of the world map
+	return get_mouse_coords().x * 16 + get_mouse_coords().y
+
+
+	
+
 
 func _on_http_request_data_loaded(villages: Variant) -> void:
 	VillageLoaded = true
 	Villages=villages
-	
 	
