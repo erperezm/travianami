@@ -7,6 +7,7 @@ extends TileMapLayer
 @onready var data_food: Label = $"../Food/dataFood"
 @onready var data_water: Label = $"../Water/dataWater"
 @onready var data_metal: Label = $"../Metal/dataMetal"
+@onready var data_name: Label = $"../Name/dataName"
 
 var GridSize = 4
 var Dic = {}
@@ -32,13 +33,16 @@ func _input(event):
 			print("Terrain type: ", get_z_index())
 			print(get_village_index())
 			if(VillageLoaded):
-				data_wood.text = str(Villages[get_village_index()].resourceAmount.wood).split(".", true, 0)[0]
-				data_food.text = str(Villages[get_village_index()].resourceAmount.food).split(".", true, 0)[0]
-				data_water.text = str(Villages[get_village_index()].resourceAmount.water).split(".", true, 0)[0]
-				data_metal.text = str(Villages[get_village_index()].resourceAmount.metal).split(".", true, 0)[0]
+				show_village_data()
 			else:
 				print("loading villages")
 			
+func show_village_data():
+	data_wood.text = str(Villages[get_village_index()].resourcesCuantity.wood)
+	data_food.text = str(Villages[get_village_index()].resourcesCuantity.food)
+	data_water.text = str(Villages[get_village_index()].resourcesCuantity.water)
+	data_metal.text = str(Villages[get_village_index()].resourcesCuantity.metal)
+	data_name.text	= str(Villages[get_village_index()].name)
 	
 func get_mouse_coords():
 	return local_to_map(get_local_mouse_position())

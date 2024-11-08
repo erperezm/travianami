@@ -60,16 +60,16 @@ texture = ExtResource("2_le3f8")
 z_index = 4
 layout_mode = 3
 anchors_preset = 0
-offset_left = 255.0
+offset_left = 347.0
 offset_top = -1.0
-offset_right = 375.0
+offset_right = 467.0
 offset_bottom = 15.0
 
 [node name="wood" type="Label" parent="Wood"]
 layout_mode = 0
-offset_left = 5.0
+offset_left = 6.0
 offset_top = 1.0
-offset_right = 75.0
+offset_right = 76.0
 offset_bottom = 17.0
 theme_override_colors/font_color = Color(0, 0.298039, 0.788235, 1)
 text = "wood:"
@@ -82,15 +82,14 @@ offset_top = 2.0
 offset_right = 121.0
 offset_bottom = 18.0
 theme_override_colors/font_color = Color(0.788235, 1, 0.788235, 1)
-text = "99999"
 metadata/_edit_group_ = true
 
 [node name="Food" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 356.0
+offset_left = 410.0
 offset_top = -1.0
-offset_right = 476.0
+offset_right = 530.0
 offset_bottom = 15.0
 
 [node name="food" type="Label" parent="Food"]
@@ -110,16 +109,15 @@ offset_top = 2.0
 offset_right = 120.0
 offset_bottom = 18.0
 theme_override_colors/font_color = Color(0.788235, 1, 0.788235, 1)
-text = "999999"
 metadata/_edit_group_ = true
 
 [node name="Water" type="Control" parent="."]
 z_index = 4
 layout_mode = 3
 anchors_preset = 0
-offset_left = 38.0
+offset_left = 196.0
 offset_top = -1.0
-offset_right = 158.0
+offset_right = 316.0
 offset_bottom = 15.0
 
 [node name="water" type="Label" parent="Water"]
@@ -139,15 +137,14 @@ offset_top = 2.0
 offset_right = 127.0
 offset_bottom = 18.0
 theme_override_colors/font_color = Color(0.788235, 1, 0.788235, 1)
-text = "99999"
 metadata/_edit_group_ = true
 
 [node name="Metal" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 151.0
+offset_left = 278.0
 offset_top = -1.0
-offset_right = 271.0
+offset_right = 398.0
 offset_bottom = 15.0
 
 [node name="metal" type="Label" parent="Metal"]
@@ -162,12 +159,38 @@ metadata/_edit_group_ = true
 
 [node name="dataMetal" type="Label" parent="Metal"]
 layout_mode = 0
-offset_left = 54.0
+offset_left = 55.0
 offset_top = 2.0
-offset_right = 124.0
+offset_right = 125.0
 offset_bottom = 18.0
 theme_override_colors/font_color = Color(0.788235, 1, 0.788235, 1)
-text = "99999"
+metadata/_edit_group_ = true
+
+[node name="Name" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 35.0
+offset_top = -1.0
+offset_right = 155.0
+offset_bottom = 15.0
+
+[node name="name" type="Label" parent="Name"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 1.0
+offset_right = 68.0
+offset_bottom = 17.0
+theme_override_colors/font_color = Color(0, 0.298039, 0.788235, 1)
+text = "name:"
+metadata/_edit_group_ = true
+
+[node name="dataName" type="Label" parent="Name"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 2.0
+offset_right = 115.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(0.788235, 1, 0.788235, 1)
 metadata/_edit_group_ = true
 
 [connection signal="data_loaded" from="HTTPRequest" to="TileMapWorld" method="_on_http_request_data_loaded"]
