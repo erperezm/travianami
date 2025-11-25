@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bd02ubujfp01s"]
+[gd_scene load_steps=3 format=3 uid="uid://c3n06ik3fjjbq"]
 
 [ext_resource type="Texture2D" uid="uid://cpfue16p6cjr3" path="res://sprites/tiles/c.png" id="1_51unw"]
-[ext_resource type="Script" path="res://scripts/ui_hud.gd" id="1_eln0x"]
+[ext_resource type="Script" uid="uid://b62pmuh0scckg" path="res://scripts/ui_hud.gd" id="1_eln0x"]
 
 [node name="MenuUI" type="CanvasLayer"]
 script = ExtResource("1_eln0x")
@@ -11,6 +11,9 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = -465.0
+offset_bottom = -248.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -19,6 +22,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 284.0
+offset_top = -14.0
+offset_right = 493.0
+offset_bottom = 51.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 32
