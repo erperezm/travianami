@@ -381,9 +381,9 @@ script = ExtResource("2_05bvo")
 
 [node name="field1" type="Button" parent="field"]
 offset_left = 129.0
-offset_top = 19.0
+offset_top = 16.0
 offset_right = 161.0
-offset_bottom = 50.0
+offset_bottom = 47.0
 mouse_default_cursor_shape = 2
 theme = ExtResource("5_m6pbj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wjeuq")
@@ -574,10 +574,10 @@ metadata/index = 14
 
 [node name="field15" type="Button" parent="field"]
 clip_contents = true
-offset_left = 274.0
-offset_top = 33.0
-offset_right = 306.0
-offset_bottom = 65.0
+offset_left = 273.0
+offset_top = 32.0
+offset_right = 305.0
+offset_bottom = 64.0
 mouse_filter = 1
 mouse_default_cursor_shape = 2
 theme = ExtResource("5_m6pbj")
@@ -618,7 +618,7 @@ metadata/index = 17
 clip_contents = true
 offset_left = 257.0
 offset_top = 208.0
-offset_right = 233.0
+offset_right = 289.0
 offset_bottom = 240.0
 mouse_filter = 1
 mouse_default_cursor_shape = 2
