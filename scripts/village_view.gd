@@ -1,4 +1,6 @@
 extends Node2D
+
+@onready var mouse_grid_selected: Sprite2D = $MouseGridSelected
 #villageData
 @onready var name_data: Label = $villageData/name/nameData
 @onready var location_data: Label = $villageData/location/locationData
@@ -18,6 +20,9 @@ extends Node2D
 @onready var water_data_mra: Label = $maxResourceAmount/water/waterDataMRA
 @onready var metal_data_mra: Label = $maxResourceAmount/metal/metalDataMRA
 @onready var wood_data_mra: Label = $maxResourceAmount/wood/woodDataMRA
+const VILLAGE = 2
+var GridSize = 4
+var Dic = {}
 
 func _ready() -> void:
 	setdata()
@@ -34,25 +39,26 @@ func _process(_delta: float) -> void:
 			print("se actualizo la villa de nuevo")
 			wait3s = false
 
+
 func setdata():
 	if(HttpRequest_G.loaded):
 		print("listo desde la villa")
 		#villageData
-		name_data.text = str(HttpRequest_G.villages[0].name)
+		name_data.text = str(HttpRequest_G.villages[VILLAGE].name)
 		location_data.text = str(0)
-		field_amount_data.text = str(HttpRequest_G.villages[0].resourcesCuantity)
+		field_amount_data.text = str(HttpRequest_G.villages[VILLAGE].resourcesCuantity)
 		#resourceAmount
-		food_data.text = str(HttpRequest_G.villages[0].resourceAmount.food).split(".", true, 0)[0]
-		water_data.text = str(HttpRequest_G.villages[0].resourceAmount.water).split(".", true, 0)[0]
-		metal_data.text = str(HttpRequest_G.villages[0].resourceAmount.metal).split(".", true, 0)[0]
-		wood_data.text = str(HttpRequest_G.villages[0].resourceAmount.wood).split(".", true, 0)[0]
+		food_data.text = str(HttpRequest_G.villages[VILLAGE].resourceAmount.food).split(".", true, 0)[0]
+		water_data.text = str(HttpRequest_G.villages[VILLAGE].resourceAmount.water).split(".", true, 0)[0]
+		metal_data.text = str(HttpRequest_G.villages[VILLAGE].resourceAmount.metal).split(".", true, 0)[0]
+		wood_data.text = str(HttpRequest_G.villages[VILLAGE].resourceAmount.wood).split(".", true, 0)[0]
 		#productionPerHour
-		food_data_pph.text = str(HttpRequest_G.villages[0].resourcePerHour.food)
-		water_data_pph.text = str(HttpRequest_G.villages[0].resourcePerHour.water)
-		metal_data_pph.text = str(HttpRequest_G.villages[0].resourcePerHour.metal)
-		wood_data_pph.text = str(HttpRequest_G.villages[0].resourcePerHour.wood)
+		food_data_pph.text = str(HttpRequest_G.villages[VILLAGE].resourcePerHour.food)
+		water_data_pph.text = str(HttpRequest_G.villages[VILLAGE].resourcePerHour.water)
+		metal_data_pph.text = str(HttpRequest_G.villages[VILLAGE].resourcePerHour.metal)
+		wood_data_pph.text = str(HttpRequest_G.villages[VILLAGE].resourcePerHour.wood)
 		#maxResourceAmount
-		food_data_mra.text = str(HttpRequest_G.villages[0].maxResourceAmount.food)
-		water_data_mra.text = str(HttpRequest_G.villages[0].maxResourceAmount.water)
-		metal_data_mra.text = str(HttpRequest_G.villages[0].maxResourceAmount.metal)
-		wood_data_mra.text = str(HttpRequest_G.villages[0].maxResourceAmount.wood)
+		food_data_mra.text = str(HttpRequest_G.villages[VILLAGE].maxResourceAmount.food)
+		water_data_mra.text = str(HttpRequest_G.villages[VILLAGE].maxResourceAmount.water)
+		metal_data_mra.text = str(HttpRequest_G.villages[VILLAGE].maxResourceAmount.metal)
+		wood_data_mra.text = str(HttpRequest_G.villages[VILLAGE].maxResourceAmount.wood)
