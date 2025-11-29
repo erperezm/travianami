@@ -12,12 +12,13 @@ config_version=5
 
 config/name="travianami"
 config/version="0.0.1"
-run/main_scene="res://travianami.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+run/main_scene="res://scenes/travianami.tscn"
+config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
+ENV="*res://scripts/loader.gd"
 HttpRequest_G="*res://scripts/http_request.gd"
 
 [display]
@@ -28,8 +29,8 @@ window/stretch/mode="canvas_items"
 
 [gui]
 
-theme/custom_font="res://fonts/Peaberry-Mono.otf"
 theme/default_font_antialiasing=0
+theme/custom_font="res://fonts/Peaberry-Mono.otf"
 
 [physics]
 
