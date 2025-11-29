@@ -381,9 +381,9 @@ script = ExtResource("2_05bvo")
 
 [node name="field1" type="Button" parent="field"]
 offset_left = 129.0
-offset_top = 19.0
+offset_top = 16.0
 offset_right = 161.0
-offset_bottom = 50.0
+offset_bottom = 47.0
 mouse_default_cursor_shape = 2
 theme = ExtResource("5_m6pbj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wjeuq")
@@ -574,10 +574,10 @@ metadata/index = 14
 
 [node name="field15" type="Button" parent="field"]
 clip_contents = true
-offset_left = 274.0
-offset_top = 33.0
-offset_right = 306.0
-offset_bottom = 65.0
+offset_left = 273.0
+offset_top = 32.0
+offset_right = 305.0
+offset_bottom = 64.0
 mouse_filter = 1
 mouse_default_cursor_shape = 2
 theme = ExtResource("5_m6pbj")
@@ -618,7 +618,7 @@ metadata/index = 17
 clip_contents = true
 offset_left = 257.0
 offset_top = 208.0
-offset_right = 233.0
+offset_right = 289.0
 offset_bottom = 240.0
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -634,21 +634,3 @@ position = Vector2(57, 24)
 texture = ExtResource("7_8q1pi")
 
 [connection signal="pressed" from="Settlement/settlement" to="Settlement/settlement" method="_on_pressed"]
-[connection signal="pressed" from="field/field1" to="field" method="_on_field_1_pressed" flags=18]
-[connection signal="pressed" from="field/field2" to="field" method="_on_field_2_pressed" flags=18]
-[connection signal="pressed" from="field/field3" to="field" method="_on_field_3_pressed" flags=18]
-[connection signal="pressed" from="field/field4" to="field" method="_on_field_4_pressed" flags=18]
-[connection signal="pressed" from="field/field5" to="field" method="_on_field_5_pressed" flags=18]
-[connection signal="pressed" from="field/field6" to="field" method="_on_field_6_pressed" flags=18]
-[connection signal="pressed" from="field/field7" to="field" method="_on_field_7_pressed" flags=18]
-[connection signal="pressed" from="field/field8" to="field" method="_on_field_8_pressed" flags=18]
-[connection signal="pressed" from="field/field9" to="field" method="_on_field_9_pressed" flags=18]
-[connection signal="pressed" from="field/field10" to="field" method="_on_field_10_pressed" flags=18]
-[connection signal="pressed" from="field/field11" to="field" method="_on_field_11_pressed" flags=18]
-[connection signal="pressed" from="field/field12" to="field" method="_on_field_12_pressed" flags=18]
-[connection signal="pressed" from="field/field13" to="field" method="_on_field_13_pressed" flags=18]
-[connection signal="pressed" from="field/field14" to="field" method="_on_field_14_pressed" flags=18]
-[connection signal="pressed" from="field/field15" to="field" method="_on_field_15_pressed" flags=18]
-[connection signal="pressed" from="field/field16" to="field" method="_on_field_16_pressed" flags=18]
-[connection signal="pressed" from="field/field17" to="field" method="_on_field_17_pressed" flags=18]
-[connection signal="pressed" from="field/field18" to="field" method="_on_field_18_pressed" flags=18]
