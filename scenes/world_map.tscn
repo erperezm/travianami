@@ -53,6 +53,8 @@ z_index = 7
 position = Vector2(57, 24)
 texture = ExtResource("2_le3f8")
 
+[node name="MenuUI" parent="." instance=ExtResource("5_ysfkf")]
+
 [node name="Wood" type="Control" parent="."]
 z_index = 4
 layout_mode = 3

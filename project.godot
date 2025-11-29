@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-ENV="*res://scripts/loader.gd"
 HttpRequest_G="*res://scripts/http_request.gd"
 
 [display]
