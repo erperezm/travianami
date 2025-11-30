@@ -44,6 +44,11 @@ func update_resource_field(field_button: BaseButton) -> void:
 
 		HttpRequest_G.p_request(player_village.Id, player_village.field.resources[field_button_index].Id)
 
+		set_resource_level()
+
+# This signal comes from loader script when <<payer_village>> variable is setted
+func _on_player_village_loaded() -> void:
+	set_resource_level()
 
 #region update field signal recived from villagge button fields
 func _on_field_1_pressed(source: BaseButton) -> void:
