@@ -5,7 +5,7 @@ extends Node
 
 func _ready() -> void:
 	ENV.connect("player_village_loaded", Callable(self, "_on_player_village_loaded"))
-	
+	create_filds_signal()
 	
 # Iterate over all --field button nodes-- setting [level] and [tooltip] text
 func set_resource_level():
@@ -36,75 +36,10 @@ func update_resource_field(field_button: BaseButton) -> void:
 func _on_player_village_loaded() -> void:
 	set_resource_level()
 
-#region update field signal recived from villagge button fields
-func _on_field_1_pressed(source: BaseButton) -> void:
-	update_resource_field(source)
-
-
-func _on_field_2_pressed(source: BaseButton) -> void:
-	update_resource_field(source)
-
-
-func _on_field_3_pressed(source: BaseButton) -> void:
-	update_resource_field(source)
-
-
-func _on_field_4_pressed(source: BaseButton) -> void:
-	update_resource_field(source)
-
-
-func _on_field_5_pressed(source: BaseButton) -> void:
-	update_resource_field(source)
-
-
-func _on_field_6_pressed(source: BaseButton) -> void:
-	update_resource_field(source)
-
-
-func _on_field_7_pressed(source: BaseButton) -> void:
-	update_resource_field(source)
-
-
-func _on_field_8_pressed(source: BaseButton) -> void:
-	update_resource_field(source)
-
-
-func _on_field_9_pressed(source: BaseButton) -> void:
-	update_resource_field(source)
-
-
-func _on_field_10_pressed(source: BaseButton) -> void:
-	update_resource_field(source)
-
-
-func _on_field_11_pressed(source: BaseButton) -> void:
-	update_resource_field(source)
-
-
-func _on_field_12_pressed(source: BaseButton) -> void:
-	update_resource_field(source)
-
-
-func _on_field_13_pressed(source: BaseButton) -> void:
-	update_resource_field(source)
-
-
-func _on_field_14_pressed(source: BaseButton) -> void:
-	update_resource_field(source)
-
-
-func _on_field_15_pressed(source: BaseButton) -> void:
-	update_resource_field(source)
-
-
-func _on_field_16_pressed(source: BaseButton) -> void:
-	update_resource_field(source)
-
-
-func _on_field_17_pressed(source: BaseButton) -> void:
-	update_resource_field(source)
-
-
-func _on_field_18_pressed(source: BaseButton) -> void:
-	update_resource_field(source)
-#endregion
+# Create dinamicly all button signals
+func create_filds_signal() -> void:
+	for field_button in fields_parent_node.get_children():
+		if field_button is Button:
+			field_button.pressed.connect(Callable(self, "_on_field_button_pressed").bind(field_button))
+func _on_field_button_pressed(field_button) -> void:
+	update_resource_field(field_button)
