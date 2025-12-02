@@ -10,7 +10,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var mouseCoords = local_to_map(get_local_mouse_position())
 	var gridCoords = (mouseCoords * 16) + Vector2i(8,8)
 	mouse_grid_selected.global_position = gridCoords

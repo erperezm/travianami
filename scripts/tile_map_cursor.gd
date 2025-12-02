@@ -26,7 +26,7 @@ func _ready() -> void:
 	else:
 		print("loading villages")
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var mouseCoords = local_to_map(get_local_mouse_position())
 	var gridCoords = (mouseCoords * 16) + Vector2i(8,8)
 	mouse_grid_selected.global_position = gridCoords
