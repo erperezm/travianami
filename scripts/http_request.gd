@@ -8,7 +8,7 @@ var loaded = false
 
 func _ready() -> void:
 	h_request()
-
+	http_request.connect("request_completed", Callable(self, "_on_request_completed")) 
 func p_request(village_id, resource_id):
 	loaded = false
 	var headers = ["Content-Type: application/json"]
@@ -19,7 +19,7 @@ func p_request(village_id, resource_id):
 func h_request():
 	print("se pidio")
 	http_request.request(url)
-	http_request.connect("request_completed", Callable(self, "_on_request_completed")) 
+	
 
 func _on_request_completed(_result, _response_code, _headers, body): 
 	var data = JSON.parse_string(body.get_string_from_utf8())
