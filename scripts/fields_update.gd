@@ -18,7 +18,7 @@ func set_resource_level():
 			if field_button is Button:
 				field = ENV.player_village.field.resources[field_button_index]
 				
-				field_button.text = str(field.level)
+				field_button.text = str(int(field.level))
 				field_button.tooltip_text = "APH:" + str(field.amountPerHour).split(".", true, 0)[0]
 				
 				field_button_index +=1

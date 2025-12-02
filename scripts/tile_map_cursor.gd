@@ -26,7 +26,7 @@ func _ready() -> void:
 	else:
 		print("loading villages")
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var mouseCoords = local_to_map(get_local_mouse_position())
 	var gridCoords = (mouseCoords * 16) + Vector2i(8,8)
 	mouse_grid_selected.global_position = gridCoords
@@ -48,6 +48,7 @@ func set_data():
 	data_water.text = str(HttpRequest_G.villages[get_village_index()].resourcesCuantity.water)
 	data_metal.text = str(HttpRequest_G.villages[get_village_index()].resourcesCuantity.metal)
 	data_terrain.text =  str(get_zIndex())
+	data_name.text = str(HttpRequest_G.villages[get_village_index()].name)
 
 func get_mouse_coords():
 	return local_to_map(get_local_mouse_position())
