@@ -30,6 +30,8 @@ func setdata():
 	if(ENV.player_village):
 		#villageData
 		field_amount_data.text = str(ENV.player_village.resourcesCuantity)
+		location_data.text = str(ENV.player_village.name)
+		name_data.text = str(ENV.player_village.name)
 		#resourceAmount
 		food_data.text = str(ENV.player_village.resourceAmount.food).split(".", true, 0)[0]
 		water_data.text = str(ENV.player_village.resourceAmount.water).split(".", true, 0)[0]
