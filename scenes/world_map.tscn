@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cefp2rc730r30" path="res://sprites/tiles/world_tiles_16.png" id="1_4tyb7"]
 [ext_resource type="Texture2D" uid="uid://d03jnatiy20q7" path="res://sprites/tiles/menu_background.png" id="2_jmymy"]
 [ext_resource type="Texture2D" uid="uid://cahmux5oojk6v" path="res://sprites/tiles/tile_selected.png" id="2_le3f8"]
-[ext_resource type="Script" path="res://scripts/tile_map_cursor.gd" id="3_na3mi"]
+[ext_resource type="Script" uid="uid://odg3yk4eixu4" path="res://scripts/tile_map_cursor.gd" id="3_na3mi"]
 [ext_resource type="PackedScene" uid="uid://c3n06ik3fjjbq" path="res://scenes/menu_ui.tscn" id="5_ysfkf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cdanu"]
@@ -43,11 +43,14 @@ tile_map_data = PackedByteArray("AAABAAAAAAABAAAAAAABAAEAAAABAAAAAAABAAIAAAAAAAA
 tile_set = SubResource("TileSet_nrot4")
 script = ExtResource("3_na3mi")
 
+[node name="MenuUI" parent="TileMapWorld" instance=ExtResource("5_ysfkf")]
+
 [node name="Camera2D" type="Camera2D" parent="TileMapWorld"]
 anchor_mode = 0
 
 [node name="MouseGridSelected" type="Sprite2D" parent="."]
 z_index = 7
+position = Vector2(57, 24)
 texture = ExtResource("2_le3f8")
 
 [node name="MenuUI" parent="." instance=ExtResource("5_ysfkf")]
@@ -81,7 +84,6 @@ offset_right = -131.429
 offset_bottom = -28.2857
 scale = Vector2(0.7, 0.7)
 theme_override_colors/font_color = Color(0.788235, 1, 0.788235, 1)
-text = "9999"
 metadata/_edit_group_ = true
 
 [node name="Food" type="Control" parent="."]
@@ -112,7 +114,6 @@ offset_right = -180.0
 offset_bottom = -14.0
 scale = Vector2(0.7, 0.7)
 theme_override_colors/font_color = Color(0.788235, 1, 0.788235, 1)
-text = "99999"
 metadata/_edit_group_ = true
 
 [node name="Water" type="Control" parent="."]
@@ -144,7 +145,6 @@ offset_right = 230.0
 offset_bottom = -26.8571
 scale = Vector2(0.7, 0.7)
 theme_override_colors/font_color = Color(0.788235, 1, 0.788235, 1)
-text = "9999"
 metadata/_edit_group_ = true
 
 [node name="Metal" type="Control" parent="."]
@@ -175,7 +175,6 @@ offset_right = 184.286
 offset_bottom = 20.2857
 scale = Vector2(0.7, 0.7)
 theme_override_colors/font_color = Color(0.788235, 1, 0.788235, 1)
-text = "9999"
 metadata/_edit_group_ = true
 
 [node name="Name" type="Control" parent="."]
@@ -204,4 +203,32 @@ offset_bottom = 16.0
 scale = Vector2(0.7, 0.7)
 theme_override_colors/font_color = Color(0.788235, 1, 0.788235, 1)
 text = "sdfasdfasdf"
+metadata/_edit_group_ = true
+
+[node name="Type" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 223.0
+offset_top = 21.0
+offset_right = 343.0
+offset_bottom = 37.0
+scale = Vector2(0.7, 0.7)
+
+[node name="terrainType" type="Label" parent="Type"]
+layout_mode = 0
+offset_left = -44.2857
+offset_right = 25.7143
+offset_bottom = 16.0
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_color = Color(0, 0.298039, 0.788235, 1)
+text = "type:"
+metadata/_edit_group_ = true
+
+[node name="dataTerrain" type="Label" parent="Type"]
+layout_mode = 0
+offset_left = -10.0
+offset_right = 100.0
+offset_bottom = 16.0
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_color = Color(0.788235, 1, 0.788235, 1)
 metadata/_edit_group_ = true

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bje713tykkdp"]
+
+[ext_resource type="PackedScene" uid="uid://c3n06ik3fjjbq" path="res://scenes/menu_ui.tscn" id="1_a1rj2"]
+[ext_resource type="Texture2D" uid="uid://eaimpdl28fqs" path="res://title_bg.png" id="2_waumh"]
+
+[node name="Travianami" type="Node2D"]
+
+[node name="MenuUI" parent="." instance=ExtResource("1_a1rj2")]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 483.0
+offset_bottom = 397.0
+texture = ExtResource("2_waumh")
+expand_mode = 2
