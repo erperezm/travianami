@@ -1,4 +1,5 @@
 extends HTTPRequest
+var requesting = false
 
 @onready var http_request: HTTPRequest = $"."
 const url = "https://ernesto.santos.edu.do/village" #remote
@@ -14,14 +15,20 @@ func p_request(village_id, resource_id):
 	var headers = ["Content-Type: application/json"]
 	var post  = url + "/" + village_id + "/upgrade/resource/" + resource_id	
 	print(post)
-	var error = http_request.request(post, headers, HTTPClient.METHOD_POST)
-	print(error)
+	if !requesting:
+		var error = http_request.request(post, headers, HTTPClient.METHOD_POST)
+		requesting = true
+		print(error)
+	
 func h_request():
 	print("se pidio")
-	http_request.request(url)
+	if !requesting:
+		http_request.request(url)
+		requesting = true
 	
 
 func _on_request_completed(_result, _response_code, _headers, body): 
+	requesting = false
 	var data = JSON.parse_string(body.get_string_from_utf8())
 	
 	if typeof(data) == 28:
