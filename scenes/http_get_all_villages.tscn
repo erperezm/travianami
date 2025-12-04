@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8y1v8rbp624o"]
+
+[ext_resource type="Script" uid="uid://dmvekivxowibv" path="res://scripts/http_get_all_villages.gd" id="1_j0wiq"]
+
+[node name="HttpGetAllVillages" type="Node"]
+script = ExtResource("1_j0wiq")
+
+[node name="http_get_all_villages" type="HTTPRequest" parent="."]

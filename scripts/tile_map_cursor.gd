@@ -12,19 +12,9 @@ extends TileMapLayer
 
 var GridSize = 4
 var Dic = {}
-# Called when the node enters the scene tree for the first time. 
-# Part of the code generation investigation - DO NOT DELETE YET
-#func _ready() -> void:
-	## Create the cell based on the sprite index
-	#for x in GridSize:
-		#for y in GridSize:
-			#set_cell(Vector2(x, y), [index-here], Vector2i(0, 0))
 
 func _ready() -> void:
-	if(HttpRequest_G.loaded):
-		set_data()
-	else:
-		print("loading villages")
+	set_data()
 
 func _physics_process(_delta: float) -> void:
 	var mouseCoords = local_to_map(get_local_mouse_position())
@@ -34,21 +24,16 @@ func _physics_process(_delta: float) -> void:
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.pressed:
-			#print("MouseCoords: ", get_mouse_coords())
-			#print("Terrain type: ", get_z_index())
-			#print(get_village_index())
-			if(HttpRequest_G.loaded):
-				set_data()
-			else:
-				print("loading villages")
+			set_data()
 
 func set_data():
-	data_wood.text = str(HttpRequest_G.villages[get_village_index()].resourcesCuantity.wood)
-	data_food.text = str(HttpRequest_G.villages[get_village_index()].resourcesCuantity.food)
-	data_water.text = str(HttpRequest_G.villages[get_village_index()].resourcesCuantity.water)
-	data_metal.text = str(HttpRequest_G.villages[get_village_index()].resourcesCuantity.metal)
-	data_terrain.text =  str(get_zIndex())
-	data_name.text = str(HttpRequest_G.villages[get_village_index()].name)
+	if ENV.all_village:
+		data_name.text = str(ENV.all_village[get_village_index()].name)
+		data_wood.text = str(ENV.all_village[get_village_index()].resourcesCuantity.wood)
+		data_food.text = str(ENV.all_village[get_village_index()].resourcesCuantity.food)
+		data_water.text = str(ENV.all_village[get_village_index()].resourcesCuantity.water)
+		data_metal.text = str(ENV.all_village[get_village_index()].resourcesCuantity.metal)
+		data_terrain.text =  str(get_zIndex())
 
 func get_mouse_coords():
 	return local_to_map(get_local_mouse_position())

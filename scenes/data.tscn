@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://caddlgxvfibx4"]
-
-[ext_resource type="Script" uid="uid://bgubegvgapyop" path="res://scripts/http_request.gd" id="2_a3n8q"]
-
-[node name="data" type="Node"]
-
-[node name="HTTPRequest" type="HTTPRequest" parent="."]
-script = ExtResource("2_a3n8q")
