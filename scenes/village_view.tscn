@@ -465,8 +465,8 @@ metadata/index = 5
 
 [node name="field6" type="Button" parent="field"]
 clip_contents = true
-offset_left = 305.0
-offset_top = 64.0
+offset_left = 306.0
+offset_top = 65.0
 offset_right = 337.0
 offset_bottom = 128.0
 mouse_filter = 1
@@ -480,9 +480,9 @@ metadata/index = 6
 [node name="field7" type="Button" parent="field"]
 clip_contents = true
 offset_left = 225.0
-offset_top = 15.0
+offset_top = 16.0
 offset_right = 257.0
-offset_bottom = 79.0
+offset_bottom = 80.0
 mouse_filter = 1
 mouse_default_cursor_shape = 2
 theme = ExtResource("5_m6pbj")
